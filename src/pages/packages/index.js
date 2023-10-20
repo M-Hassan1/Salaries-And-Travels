@@ -1,17 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Button,
-  Input,
-  Pagination,
-  Checkbox,
-  Space,
-  Modal,
-  message,
-  Dropdown,
-  Menu,
-  Form,
-  Select, Table, DatePicker, Row, Col
-} from "antd";
+import { Button, Input, Pagination, Checkbox, Space, Modal, message, Dropdown, Menu, Form, Select, Table, DatePicker, Row, Col } from "antd";
 import Image from "next/image";
 import Head from "next/head";
 import {
@@ -22,96 +10,14 @@ import {
 import { EditOutlined } from "@ant-design/icons";
 import SellerModal from "../../components/Sellers/SellerModal";
 import EditModal from "../../components/Sellers/EditModal";
+import { sellers } from "./PackagesData";
 
 const { Option } = Select;
 const { Search } = Input;
 
 const Index = () => {
   const ITEMS_PER_PAGE = 5;
-  const sellers = [
-    {
-      id: 1,
-      image: "/images/seller1.svg",
-      name: "Michael Johnson",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 20000.00,
-    },
-    {
-      id: 2,
-      image: "/images/seller2.svg",
-      name: "Emily Brown",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 18000.00,
-    },
-    {
-      id: 3,
-      image: "/images/seller3.svg",
-      name: "David Wilson",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 25000.00,
-    },
-    {
-      id: 4,
-      image: "/images/seller4.svg",
-      name: "Sarah Johnson",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 22000.00,
-    },
-    {
-      id: 5,
-      image: "/images/seller1.svg",
-      name: "David Wilson",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 28000.00,
-    },
-    {
-      id: 6,
-      image: "/images/seller2.svg",
-      name: "Emily Brown",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 19000.00,
-    },
-    {
-      id: 7,
-      image: "/images/seller3.svg",
-      name: "Michael Johnson",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 23000.00,
-    },
-    {
-      id: 8,
-      image: "/images/seller4.svg",
-      name: "Michael Johnson",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 21000.00,
-    },
-    {
-      id: 9,
-      image: "/images/seller1.svg",
-      name: "Michael Johnson",
-      registered: "Aug 06, 2023",
-      country: "USA",
-      group: "Default",
-      earn: 24000.00,
-    },
-  ];
-
+  <sellers />
 
   const [selectedSellerId, setSelectedSellerId] = useState(null);
   const [Facilities, setFacilities] = useState("It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).");
@@ -262,14 +168,14 @@ const Index = () => {
       </Head>
       <div className="h-full w-full my-4 py-3   bg-[#FFFFFF] rounded-md">
 
-        <div className="flex justify-between px-4 pb-[0px] items-center  h-full overflow-x-scroll border-b-solid border-b-[1px] max-h-[100px] lg:max-h-[52px] h-full border-b-[#00000038] text-[#777777]">
+        <div className="flex justify-between px-4 pb-[0px] items-center   overflow-x-scroll border-b-solid border-b-[1px] max-h-[100px] lg:max-h-[52px] h-full border-b-[#00000038] text-[#777777]">
           <h1 className="text-[#1B2430] font-semibold text-[24px]">
             Add New Package
           </h1>
 
         </div>
 
-        <div className="flex justify-between px-4 pb-[0px] items-center  h-full overflow-x-scroll border-b-solid border-b-[1px] max-h-[100px] lg:max-h-[52px] h-full border-b-[#00000038] text-[#777777]">
+        <div className="flex justify-between px-4 pb-[0px] items-center  overflow-x-scroll border-b-solid border-b-[1px] max-h-[100px] lg:max-h-[52px] h-full border-b-[#00000038] text-[#777777]">
           <button
             className={`uppercase mb-0 pb-0 font-[500] flex justify-center  items-center h-full mr-3 border-b-solid ${activeButton === "Packages" ? "border-b-[#ED6C0E]" : "border-b-transparent"
               }  border-b-[2px] ${activeButton === "Packages" ? "text-[#ED6C0E]" : "text-[#363B49]"
@@ -670,8 +576,8 @@ const Index = () => {
           {
             activeButton === "Galleries" && (<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[1, 2, 3].map((index) => {
-                return <a href="#" key={index} class="flex flex-col items-center max-w-[500px] w-full min-h-[400px] h-full  bg-white border border-gray-200 rounded-lg shadow  w-full ">
-                  <img class="object-cover w-full rounded-t-lg w-full h-full rounded-lg " src="/dom.png" alt="" />
+                return <a href="#" key={index} class="flex flex-col items-center max-w-[500px] w-full min-h-[400px] h-full  bg-white border border-gray-200 rounded-lg shadow ">
+                  <img class="object-cover rounded-t-lg w-full h-full rounded-lg " src="/dom.png" alt="" />
                   <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-[#1B2430]">Noteworthy technology acquisitions 2021</h5>
                     <p class="mb-3 font-normal text-[#1B2430]">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>

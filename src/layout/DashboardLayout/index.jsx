@@ -4,14 +4,7 @@ import { useState } from 'react'
 import { UserOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import Image from "next/image"
-import {
-    Avatar,
-    Button,
-    Dropdown,
-    Input,
-    Layout,
-    Spin
-} from "antd";
+import {Avatar,Button,Dropdown,Input,Layout,Spin } from "antd";
 const { Header, Content } = Layout;
 import { Menu } from "antd";
 import routes from "@/routes/routes";
@@ -32,14 +25,7 @@ import { Inter } from "next/font/google";
 const font361 = Inter({
     subsets: ["latin"],
     weight: [
-        "200",
-        "300",
-        "400",
-        "500",
-        "600",
-        "700",
-        "800",
-        "900"
+        "200","300","400","500","600","700","800","900"
     ]
 });
 

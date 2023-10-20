@@ -151,7 +151,7 @@ const Index = () => {
       </Head>
       <ToastContainer />
       <div className="h-full w-full  my-4 overflow-hidden">
-        <div className="w-full h-full flex flex-col-reverse  md:flex-row  bg-[#FFFFFF] shadow-sm rounded-md items-center  md:items-start md:justify-start my-5 md:px-6 px-4 md:px-0 ">
+        <div className="w-full h-full flex flex-col-reverse  md:flex-row  bg-[#FFFFFF] shadow-sm rounded-md items-center  md:items-start md:justify-start my-5 px-4 md:px-0 ">
           <div className="w-full md:flex-row flex flex-col max-w-[100%] md:max-w-[80%]  my-5 md:my-0 sm:mx-4 gap-4">
             <div className="w-full  bg-[#FFFFFF]  py-5">
               <form className="my-3  px-6 pb-6" onSubmit={handleSubmit}>

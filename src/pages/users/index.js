@@ -1,13 +1,5 @@
 "use client";
-import {
-    Button,
-    Input,
-    Pagination,
-    Modal,
-    message,
-    Dropdown,
-    Menu, Checkbox,
-    Form, Select
+import { Button, Input, Pagination, Modal, message, Dropdown, Menu, Checkbox, Form, Select
 } from "antd";
 import { Space, Table, Tag, Popconfirm } from "antd";
 import Image from "next/image";

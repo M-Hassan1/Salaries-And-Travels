@@ -1,18 +1,6 @@
 "use client";
 
-import {
-  Button,
-  Input,
-  Pagination,
-  Checkbox,
-  Space,
-  Modal,
-  message,
-  Dropdown,
-  Menu,
-  Form,
-  Select,
-} from "antd";
+import { Button, Input, Modal, message, Dropdown, Menu, FormSelect } from "antd";
 
 import { Table, Tag } from "antd";
 
@@ -29,90 +17,6 @@ const { Search } = Input;
 
 const Index = () => {
   const ITEMS_PER_PAGE = 5;
-
-  const buyers = [
-    {
-      id: 1,
-      image: "/images/buyer1.svg",
-      name: "James Wiliams",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-    {
-      id: 2,
-      image: "/images/buyer2.svg",
-      name: "John Doe",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-    {
-      id: 3,
-      image: "/images/buyer3.svg",
-      name: "Steve Smith",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-    {
-      id: 4,
-      image: "/images/buyer4.svg",
-      name: "James Anderson",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-    {
-      id: 5,
-      image: "/images/buyer1.svg",
-      name: "Steve Smith",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-    {
-      id: 6,
-      image: "/images/buyer2.svg",
-      name: "John Doe",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-    {
-      id: 7,
-      image: "/images/buyer3.svg",
-      name: "James Anderson",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-    {
-      id: 8,
-      image: "/images/buyer4.svg",
-      name: "James Anderson",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-    {
-      id: 9,
-      image: "/images/buyer1.svg",
-      name: "James Anderson",
-      registered: "Aug 06,2023",
-      country: "USA",
-      group: "Default",
-      spent: 14676.00,
-    },
-  ];
 
 
   const columns = [

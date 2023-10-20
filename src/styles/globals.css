@@ -63,9 +63,8 @@
 
 .sidebar {
   overflow-y: auto;
-  min-height: 100vh !important;
+  height: 100vh !important;
   color: black;
-  /* padding-bottom: 1rem !important; */
 }
 
 ::-webkit-scrollbar {

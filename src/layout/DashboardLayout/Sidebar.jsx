@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Layout, Menu, Button } from "antd";
 import routes from "@/routes/routes";
@@ -10,28 +11,26 @@ const { Sider } = Layout;
 const Sidebar = ({ role, handleLogout }) => {
   const router = useRouter();
   const [current, setCurrent] = useState(router.pathname);
+  const [collapsed, setCollapsed] = useState(false); // New state for collapsing the sidebar
 
   useEffect(() => {
-    if (router.pathname) {
-      if (current !== router.pathname) {
-        setCurrent(router.pathname);
-      }
+    if (router.pathname && current !== router.pathname) {
+      setCurrent(router.pathname);
     }
   }, [router, current]);
 
   return (
     <Sider
-      style={{ background: "#1B2430" }}
-      className="h-full mb-0 hidden md:block"
+      className={`h-full ${collapsed ? "collapsed" : "expanded  bg-red-600 "}`}
+      collapsible // Make it collapsible
+      collapsed={collapsed} // Set the initial collapsed state
+      onCollapse={(collapsed) => setCollapsed(collapsed)} // Handle collapse
     >
       <div className="flex items-center justify-center">
         <Image src={"/logo.svg"} width={170} height={60} alt="logo" />
       </div>
       <Menu
-        style={{
-          // marginTop: "2rem",
-        }}
-        className="sidebar"
+        className="sidebar mt-2"
         theme="light"
         defaultSelectedKeys={[current]}
         onClick={({ key }) => {
@@ -64,8 +63,7 @@ const Sidebar = ({ role, handleLogout }) => {
                 ) : (
                   <Link
                     href={route.path}
-                    className={`font-normal text-base font-poppins group ${current === route.path ? "text-white" : "text-white"
-                      }`}
+                    className={`font-normal text-base font-poppins group ${current === route.path ? "text-white" : "text-white"}`}
                   >
                     {route.title}
                   </Link>
@@ -88,8 +86,7 @@ const Sidebar = ({ role, handleLogout }) => {
                     label: (
                       <Link
                         href={child.path}
-                        className={`font-normal text-base font-poppins group ${current === child.path ? "text-white" : "text-white"
-                          }`}
+                        className={`font-normal text-base font-poppins group ${current === child.path ? "text-white" : "text-white"}`}
                       >
                         {child.title}
                       </Link>
@@ -102,24 +99,29 @@ const Sidebar = ({ role, handleLogout }) => {
         })}
       />
 
-      <div style={{
-        position: "absolute",
-        bottom: "2%",
-        left: "50%",
-        transform: "translateX(-50%)",
-
-      }} className="bg-[#FFC400] flex flex-col justify-center items-center py-3 px-3 rounded-[10px] ">
-        <Image src={'/dp1.svg'} width={83} height={83} />
-        <p className="text-[#000000] font-semibold text-[14px]">James Williams</p>
-        <p className="text-[#0000009C] text-[14px]">User77@email.com</p>
-        <Button
-          type="text"
-          onClick={handleLogout}
-          className="flex items-center mt-3 font-[16px] text-[500] bg-[#000000] w-full flex justify-center items-center font-poppins text-[#FFFFFF] mt-auto mb-2"
-        >
-          Log Out
-        </Button>
+      <div className="absolute bottom-[2%] left-1/2 transform -translate-x-1/2 bg-[#FFC400] py-3 px-3 rounded-[10px] sm:flex">
+        <div className="flex flex-col items-center">
+          <Image
+            src={'/dp1.svg'}
+            alt="Profile Image"
+            width={83} 
+            height={83}
+          />
+          <p className="text-[#000000] font-semibold text-[14px]">James Williams</p>
+          <p className="text-[#0000009C] text-[14px]">User77@email.com</p>
+          <div className="flex items-center mt-3">
+            <Button
+              type="text"
+              onClick={handleLogout}
+              className="font-[16px] text-[500] bg-[#000000] w-full flex justify-center items-center font-poppins text-[#FFFFFF] mt-auto mb-2"
+            >
+              Log Out
+            </Button>
+          </div>
+        </div>
       </div>
+
+
     </Sider>
   );
 };
